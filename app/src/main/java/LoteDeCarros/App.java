@@ -71,7 +71,7 @@ public class App {
         prompt += "1) Marcas\n";
         prompt += "2) Modelos\n";
         prompt += "3) Vehiculos\n";
-        prompt += "4) Cancelar\n\n";
+        prompt += "4) Salir\n\n";
         prompt += "Input: ";
         var cScanner = new ConstrainedScanner(prompt, 1, 4);
         for (;;) {
