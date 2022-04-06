@@ -4,7 +4,7 @@ import DataManager.Pool.*;
 
 public class Model extends Component {
     private String modelName = new String();
-    private int modelYear = 0;
+    private Integer modelYear = 0;
     private Boolean hasSunroof = false;
     private Integer doorCount = 0;
     private Integer seatCount = 0;
@@ -32,11 +32,11 @@ public class Model extends Component {
         this.modelName = modelName;
     }
 
-    public int getModelYear() {
+    public Integer getModelYear() {
         return this.modelYear;
     }
 
-    public void setModelYear(int modelYear) {
+    public void setModelYear(Integer modelYear) {
         this.modelYear = modelYear;
     }
 
