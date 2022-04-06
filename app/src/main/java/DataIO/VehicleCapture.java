@@ -89,6 +89,7 @@ public class VehicleCapture implements ICapture {
             tableBuilder.bindColumnValue(0, i);
             tableBuilder.bindColumnValue(1, vehicle.getVIN());
             tableBuilder.bindColumnValue(2, vehicle.getLicensePlate());
+            tableBuilder.bindColumnValue(3, vehicle.getMileage());
             tableBuilder.commitRow();
         }
         System.out.println(tableBuilder.getTable());
