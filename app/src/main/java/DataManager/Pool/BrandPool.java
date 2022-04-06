@@ -4,7 +4,7 @@ public class BrandPool extends ComponentPool{
     private static BrandPool instance = new BrandPool();
     
     private BrandPool(){
-        nextPool = ModelPool.get();
+        super(ModelPool.get());
     }
     
     public static BrandPool get(){

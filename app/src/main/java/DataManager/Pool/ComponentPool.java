@@ -3,9 +3,13 @@ import java.util.ArrayList;
 import DataManager.Component;
 
 public class ComponentPool{
-    protected ArrayList<Component> componentObjects = new ArrayList<Component>();
-    protected ComponentPool nextPool = null;
+    private ArrayList<Component> componentObjects = new ArrayList<Component>();
+    private ComponentPool nextPool = null;
     
+    public ComponentPool(ComponentPool nextPool){
+        this.nextPool = nextPool;
+    }
+
     public void registerComponent(Component object){
         if(!componentObjects.contains(object)){
             componentObjects.add(object);
