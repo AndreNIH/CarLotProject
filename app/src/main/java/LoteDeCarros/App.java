@@ -102,7 +102,7 @@ public class App {
         prompt += "4) Borrar\n";
         prompt += "5) Cancelar\n\n";
         prompt += "Input: ";
-        var cScanner = new ConstrainedScanner(prompt, 1, 4);
+        var cScanner = new ConstrainedScanner(prompt, 1, 5);
         switch (cScanner.getValue()) {
             case kCreate:
                 targetGroup.onCreate();
