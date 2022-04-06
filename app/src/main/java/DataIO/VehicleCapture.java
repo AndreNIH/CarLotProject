@@ -78,6 +78,7 @@ public class VehicleCapture implements ICapture {
     @Override
     public Component onBrowse(boolean shouldReturnComponent) {
         TableBuilder tableBuilder = new TableBuilder(
+                new TableCell("ID",5),
                 new TableCell("VIN", 20),
                 new TableCell("Placas del carro"),
                 new TableCell("Color del carro"),
@@ -89,7 +90,8 @@ public class VehicleCapture implements ICapture {
             tableBuilder.bindColumnValue(0, i);
             tableBuilder.bindColumnValue(1, vehicle.getVIN());
             tableBuilder.bindColumnValue(2, vehicle.getLicensePlate());
-            tableBuilder.bindColumnValue(3, vehicle.getMileage());
+            tableBuilder.bindColumnValue(3, vehicle.getColor());
+            tableBuilder.bindColumnValue(4, vehicle.getMileage());
             tableBuilder.commitRow();
         }
         System.out.println(tableBuilder.getTable());
