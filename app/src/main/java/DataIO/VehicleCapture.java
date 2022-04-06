@@ -13,7 +13,7 @@ import DataManager.Vehicle;
 import DataIO.ConstrainedScanner;
 
 public class VehicleCapture implements ICapture {
-    public static Scanner sc = new Scanner(System.in);
+    public Scanner sc = new Scanner(System.in);
     private static String errorMessage = new String("Error: No se ha registrado ningun vehiculo en el sistema");
 
     private Vehicle createNewInstance() {
@@ -82,7 +82,8 @@ public class VehicleCapture implements ICapture {
                 new TableCell("VIN", 20),
                 new TableCell("Placas del carro"),
                 new TableCell("Color del carro"),
-                new TableCell("Kilometraje del carro"));
+                new TableCell("Kilometraje del carro"),
+                new TableCell("Modelo"));
 
         VehiclePool pool = VehiclePool.get();
         for (int i = 0; i < pool.countRegisterdComponents(); i++) {
@@ -92,6 +93,7 @@ public class VehicleCapture implements ICapture {
             tableBuilder.bindColumnValue(2, vehicle.getLicensePlate());
             tableBuilder.bindColumnValue(3, vehicle.getColor());
             tableBuilder.bindColumnValue(4, vehicle.getMileage());
+            tableBuilder.bindColumnValue(5, vehicle.getModel().getModelName());
             tableBuilder.commitRow();
         }
         System.out.println(tableBuilder.getTable());

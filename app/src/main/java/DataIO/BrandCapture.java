@@ -8,7 +8,7 @@ import Graphics.*;
 import DataIO.ConstrainedScanner;
 
 public class BrandCapture implements ICapture {
-    public static Scanner sc = new Scanner(System.in);
+    public Scanner sc = new Scanner(System.in);
     private static String errorMessage = new String("Error: No se ha registrado ninguna marca en el sistema");
 
     private Brand createNewInstance(){

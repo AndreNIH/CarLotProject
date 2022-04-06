@@ -7,7 +7,7 @@ import DataManager.*;
 import Graphics.*;
 
 public class ModelCapture implements ICapture {
-    public static Scanner sc = new Scanner(System.in);
+    public Scanner sc = new Scanner(System.in);
     private static String errorMessage = new String("Error: No se ha registrado ningun modelo de autos en el sistema.");
 
     private Model createNewInstance() {
