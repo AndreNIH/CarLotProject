@@ -20,7 +20,7 @@ public class ConstrainedScanner{
                 int result = scanner.nextInt();
                 if(result >= minVal && result <= maxVal) return result;
             }catch(java.util.InputMismatchException ex){
-                scanner.next();
+                if(scanner.hasNext()) scanner.next();
             }
         }
     }
