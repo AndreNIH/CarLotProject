@@ -3,7 +3,6 @@ package DataManager;
 import DataManager.Pool.*;
 
 public class Vehicle extends Component {
-    // TODO: Add fields and get/set methods
     private String VIN = new String();
     private String licensePlate = new String();
     private String color = new String();
