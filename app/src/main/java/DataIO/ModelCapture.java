@@ -1,6 +1,7 @@
 package DataIO;
 
 import java.util.Scanner;
+import java.util.InputMismatchException;
 import DataManager.Pool.ModelPool;
 import DataIO.BrandCapture;
 import DataManager.*;
@@ -9,6 +10,18 @@ import Graphics.*;
 public class ModelCapture implements ICapture {
     public Scanner sc = new Scanner(System.in);
     private static String errorMessage = new String("Error: No se ha registrado ningun modelo de autos en el sistema.");
+    
+    private boolean requestYesNoPrompt(String title) throws InputMismatchException{
+        //No utilizen la instancia de Scanner "sc". Hay conflicto con este metodo
+        //En su lugar utilizen "scs"
+        var scs = new Scanner(System.in);
+        for(;;){
+            System.out.print(title);
+            String response = scs.nextLine();
+            if(response.toUpperCase().startsWith("S")) return true;
+            else if (response.toUpperCase().startsWith("N")) return false;
+        }
+    }
 
     private Model createNewInstance() {
         
@@ -20,8 +33,7 @@ public class ModelCapture implements ICapture {
             newModel.setModelName(sc.next());
             System.out.print("Año del carro a registrar: ");
             newModel.setModelYear(sc.nextInt());
-            System.out.print("Tiene quemacocos(Boolean): ");
-            newModel.setHasSunroof(sc.nextBoolean());
+            newModel.setHasSunroof(requestYesNoPrompt("Tiene quemacocos(S[i]/N[o]): "));
             System.out.print("Numero de puertas del carro: ");
             newModel.setDoorCount(sc.nextInt());
             System.out.print("Numero de asientos del carro: ");
