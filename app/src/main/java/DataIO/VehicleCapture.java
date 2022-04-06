@@ -17,6 +17,8 @@ public class VehicleCapture implements ICapture {
     private static String errorMessage = new String("Error: No se ha registrado ningun vehiculo en el sistema");
 
     private Vehicle createNewInstance() {
+        if(ModelPool.get().countRegisterdComponents() == 0) return null;
+        System.out.println("Seleccione el modelo al que asociara este vehiculo\n");
         Model model = (Model) new ModelCapture().onBrowse(true);
         if (model == null)
             return null;

@@ -2,6 +2,8 @@ package DataIO;
 
 import java.util.Scanner;
 import java.util.InputMismatchException;
+
+import DataManager.Pool.BrandPool;
 import DataManager.Pool.ModelPool;
 import DataIO.BrandCapture;
 import DataManager.*;
@@ -24,7 +26,9 @@ public class ModelCapture implements ICapture {
     }
 
     private Model createNewInstance() {
-        
+        if(BrandPool.get().countRegisterdComponents() == 0) return null;
+        System.out.println("Seleccione la marca a la que asociara este modelo\n");
+
         Brand brand = (Brand) new BrandCapture().onBrowse(true);
         if (brand == null) return null;
         try{
