@@ -47,7 +47,7 @@ public class TableBuilder{
         return result.concat("\n");
     }
 
-    public String getHeader(){
+    private String getHeader(){
         String result = new String();
         result += getRibbon();
         for(TableCell headerCell : cellContainer){
