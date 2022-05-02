@@ -99,7 +99,8 @@ public class ModelCapture implements ICapture {
                 new TableCell("Quemacocos"),
                 new TableCell("Numero de Puertas"),
                 new TableCell("Numero de Asientos"),
-                new TableCell("Capacidad del Tanque(L)"));
+                new TableCell("Capacidad del Tanque(L)"),
+                new TableCell("Marca", 10));
 
         ModelPool pool = ModelPool.get();
         for (int i = 0; i < pool.countRegisterdComponents(); i++) {
@@ -111,6 +112,7 @@ public class ModelCapture implements ICapture {
             tableBuilder.bindColumnValue(4, model.getDoorCount());
             tableBuilder.bindColumnValue(5, model.getSeatCount());
             tableBuilder.bindColumnValue(6, model.getFuelCapacity());
+            tableBuilder.bindColumnValue(7, model.getBrand().getBrandName());
             tableBuilder.commitRow();
         }
         System.out.println(tableBuilder.getTable());
